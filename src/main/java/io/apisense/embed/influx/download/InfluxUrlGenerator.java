@@ -22,7 +22,7 @@ public class InfluxUrlGenerator implements UrlGenerator {
                 .append("/").append(BASE_URL)
                 .append("/").append(configuration.version.directory)
                 .append("/").append(PRODUCT_NAME)
-                .append("-").append(configuration.version.dlPath)
+                .append(configuration.version.beforeVersionDlPathSeparator).append(configuration.version.dlPath)
                 .append("_").append(configuration.os.dlPath)
                 .append("_").append(configuration.architecture.dlPath)
                 .append(".").append(configuration.os.archiveType.extension);

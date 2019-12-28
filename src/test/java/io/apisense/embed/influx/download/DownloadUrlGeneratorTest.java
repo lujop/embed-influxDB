@@ -98,4 +98,13 @@ public class DownloadUrlGeneratorTest {
         assertThat("Url is the same as on the download website", url,
                 is("https://dl.influxdata.com/influxdb/nightlies/influxdb-nightly_windows_amd64.zip"));
     }
+
+    @Test
+    public void testInflux2AlphaMacUrlIsCorrect() throws Exception {
+        VersionConfiguration config = new VersionConfiguration(OSType.Mac, OSArchitecture.x86_64, InfluxVersion.V2_0_0_ALPHA);
+        String url = influxUrlGenerator.buildSource(config).toString();
+
+        assertThat("Url is the same as on the download website", url,
+                is("https://dl.influxdata.com/influxdb/releases/influxdb_2.0.0-alpha.21_darwin_amd64.tar.gz"));
+    }
 }
